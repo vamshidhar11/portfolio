@@ -16,6 +16,9 @@ const messages = {
     phone: {
       label: "Telephone"
     },
+    description: {
+      label: "Description"
+    },
     submit: {
       label: "Submit",
       loading: "Sending...",

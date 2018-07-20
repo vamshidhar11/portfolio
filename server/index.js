@@ -6,7 +6,7 @@ const Recaptcha = require('express-recaptcha');
 
 const app = express();
 
-const recaptcha = new Recaptcha(process.env.RECAPTCHA_SITE_KEY, process.env.RECAPTCHA_SECRET_KEY);
+// const recaptcha = new Recaptcha(process.env.RECAPTCHA_SITE_KEY, process.env.RECAPTCHA_SECRET_KEY);
 
 app.use(secure)
 app.use(compression())

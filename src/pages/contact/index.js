@@ -35,6 +35,7 @@ class Contact extends React.Component {
         Name: ${e.target.name.value || "n/a"}
         Company: ${e.target.company.value || "n/a"}
         Phone: ${e.target.phone.value || "n/a"}
+        description:${e.target.description.value || "n/a"}
         `,
         _subject: "🚀 portfolio contact"
       };
@@ -156,7 +157,7 @@ class Contact extends React.Component {
                   </select>
                 </div>
               </div> */}
-              {/* <div className="col-12">
+              <div className="col-12">
                 <div className="form-group">
                   <label htmlFor="description">
                     {messages.form.description.label}*
@@ -169,7 +170,7 @@ class Contact extends React.Component {
                     required
                   />
                 </div>
-              </div> */}
+              </div>
               <div className="col-12">
                 <div className="form-group">
                   <ReCAPTCHA

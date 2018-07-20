@@ -40,7 +40,7 @@ const TemplateWrapper = ({ children }) => {
             {
               name: "keywords",
               content:
-                "frontend development, front-end, javascript, react, redux, node.js"
+                "frontend development, full stack development, front-end, javascript, react, redux, node.js"
             }
           ]}
         >
@@ -83,11 +83,11 @@ const TemplateWrapper = ({ children }) => {
                       {messages[locale || defaultLocale].nav.projects}
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link to={`/${locale}/contact`}>
                       {messages[locale || defaultLocale].nav.contact}
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
               </nav>
             </div>

@@ -44,8 +44,6 @@ const projects = [
     description: (
       <div>
         <p>A Social Media App for developers to connect and discuss</p>
-        {/* <p>This is a marketing website to showcase the company's main products and services. It also allows potential customers to request a custom quote through an email form. The form is directly connected to a <a href="https://mailchimp.com">MailChimp</a> mailing list.</p>
-        <p>In this project I had the pleasure to work with an artist which drew original illustrations and icons that compose the website. Built on<a href="https://www.gatsbyjs.org/">Gatsby</a>.</p> */}
       </div>
     )
   }

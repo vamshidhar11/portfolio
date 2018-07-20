@@ -4,8 +4,8 @@ import IndexPage from "./index";
 const messages = {
   tagline: {
     title: "I build",
-    services: ["Websites", "Web Apps", "Beautiful UIs", "API's"],
-    button: `Let's talk!`
+    services: ["Websites", "Web Apps", "Beautiful UIs", "API's"]
+    // button: `Let's talk `
   },
   about: {
     title: "About",

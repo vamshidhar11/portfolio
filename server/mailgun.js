@@ -1,14 +1,15 @@
 const mailgun = require("mailgun.js");
 
+
 const mg = mailgun.client({
   username: "api",
-  key: process.env.MAILGUN_API_KEY,
-  public_key: process.env.MAILGUN_PUBLIC_KEY
+  key: keys.key,
+  public_key: keys.public_key
 });
 const send = (req, res, next) => {
   if (!req.recaptcha.error) {
     mg.messages
-      .create("mail.dlbn.co", {
+      .create("mail.vamshidhar.com", {
         from: `${req.body.name} <${req.body.email}>`,
         to: "vamshidhar490@outlook.com",
         subject: `🚀 portfolio contact`,
