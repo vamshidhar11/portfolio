@@ -1,5 +1,4 @@
 import React, { PropTypes } from "react";
-import Img from "gatsby-image";
 
 const Project = props => (
   <div className="pb-5">
