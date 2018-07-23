@@ -1,10 +1,10 @@
-import React from 'react'
-import Project from '../../components/Project'
-import Helmet from 'react-helmet'
+import React from "react";
+import Project from "../../components/Project";
+import Helmet from "react-helmet";
 
-const Projects = (props) => {
-  const messages = props.messages
-  const projects = props.projects
+const Projects = props => {
+  const messages = props.messages;
+  const projects = props.projects;
   if (messages && projects) {
     return (
       <div>
@@ -12,12 +12,17 @@ const Projects = (props) => {
           <title>{messages.title}</title>
         </Helmet>
         <h1>{messages.title}</h1>
-        <div className="separator"></div>
+        <div className="separator" />
         <section>
           <div className="row">
             {projects.map((project, index) => (
               <div className="col-12 col-md-6" key={index}>
-                <Project title={project.title} url={project.url}>
+                <Project
+                  // image={project.image}
+                  title={project.title}
+                  url={project.url}
+                  // resolution={project.sizes}
+                >
                   {project.description}
                 </Project>
               </div>
@@ -25,7 +30,8 @@ const Projects = (props) => {
           </div>
         </section>
       </div>
-    )
-  } return (<div/>)
-}
-export default Projects
+    );
+  }
+  return <div />;
+};
+export default Projects;

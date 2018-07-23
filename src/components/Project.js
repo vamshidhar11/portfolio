@@ -1,7 +1,5 @@
 import React, { PropTypes } from "react";
-import tripbyLogo from "../assets/img/logos/tripby.svg";
-
-const projects = [{ name: "dHUB", url: "http://tripby.org", logo: tripbyLogo }];
+import Img from "gatsby-image";
 
 const Project = props => (
   <div className="pb-5">
@@ -9,8 +7,8 @@ const Project = props => (
     <a href={props.url} className="mt-3 d-block">
       {props.url}
     </a>
-    <img src={props.image} />
     {props.children}
+    {/* <Img src={props.image} sizes={props.resolution} /> */}
   </div>
 );
 
