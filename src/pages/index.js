@@ -8,29 +8,40 @@ import SimpleIcon from '../components/SimpleIcon';
 
 import 'react-typist/dist/Typist.css';
 
-class IndexPage extends React.Component {
-  constructor() {
+class IndexPage extends React.Component
+{
+  constructor()
+  {
     super();
   }
-  trackCta() {
-    if (typeof window !== 'undefined' && window.ga) {
-      window.ga('send', 'event', 'Contact', 'Click CTA to go to contact page');
+  trackCta ()
+  {
+    if ( typeof window !== 'undefined' && window.ga )
+    {
+      window.ga( 'send', 'event', 'Contact', 'Click CTA to go to contact page' );
     }
   }
-  componentDidMount() {
-    if (typeof window !== `undefined`) {
-      if (window.location.pathname === '/') {
-        if (navigator.language === 'pt-BR' || navigator.language === 'pt') {
-          window.___history.replace('/pt/');
-        } else {
-          window.___history.replace('/en/');
+  componentDidMount ()
+  {
+    if ( typeof window !== `undefined` )
+    {
+      if ( window.location.pathname === '/' )
+      {
+        if ( navigator.language === 'pt-BR' || navigator.language === 'pt' )
+        {
+          window.___history.replace( '/pt/' );
+        } else
+        {
+          window.___history.replace( '/en/' );
         }
       }
     }
   }
-  render() {
+  render ()
+  {
     const messages = this.props.messages;
-    if (messages) {
+    if ( messages )
+    {
       return (
         <div>
           <section className="py-4 py-md-5">
@@ -39,14 +50,14 @@ class IndexPage extends React.Component {
                 <Typist>
                   {messages.tagline.title}&nbsp;
                   <br className="d-md-none" />
-                  {messages.tagline.services.map((service, index) => (
+                  {messages.tagline.services.map( ( service, index ) => (
                     <div className="d-inline" key={index}>
                       <strong>{service}</strong>
                       {index === messages.tagline.services.length - 1 ? null : (
                         <Typist.Backspace count={service.length} delay={1000} />
                       )}
                     </div>
-                  ))}
+                  ) )}
                 </Typist>
               </h1>
             </div>
@@ -85,7 +96,7 @@ class IndexPage extends React.Component {
                   color: '#61DAFB'
                 },
                 {
-                  icon: 'node-dot-js',
+                  icon: 'nodedotjs',
                   name: 'Node.js',
                   url: 'https://nodejs.org/',
                   color: '#61DAFB'
