@@ -5,10 +5,10 @@
   "author": "vamshidhar490@gmail.com>",
   "dependencies": {
     "axios": "^0.17.1",
-    "body-parser": "^1.18.2",
+    "body-parser": "^1.20.1",
     "bootstrap": "4.0.0-beta",
     "compression": "^1.7.2",
-    "express": "^4.16.2",
+    "express": "^4.18.2",
     "express-force-https": "^1.0.0",
     "express-recaptcha": "^3.0.1",
     "gatsby": "^1.9.261",
