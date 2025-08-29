@@ -116,7 +116,7 @@ const TemplateWrapper = ({ children }) => {
                 </a>
               </li> */}
               <li className="col" style={{ flex: 0 }}>
-                <a href="https://twitter.com/suryadeva90">
+                <a href="https://twitter.com/vamshidhar11">
                   <img src={twitterLogo} alt="" height="18" />
                 </a>
               </li>

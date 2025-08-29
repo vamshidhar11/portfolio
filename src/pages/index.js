@@ -114,6 +114,12 @@ class IndexPage extends React.Component
                   color: '#61DAFB'
                 },
                 {
+                  icon: 'postgresql',
+                  name: 'PostgreSQL',
+                  url: 'https://www.postgresql.org/',
+                  color: '#61DAFB'
+                },
+                {
                   icon: 'mysql',
                   name: 'MySQL',
                   url: 'https://mysql.com/',
@@ -135,6 +141,12 @@ class IndexPage extends React.Component
                   icon: 'git',
                   name: 'Git',
                   url: 'https://git-scm.com/',
+                  color: '#61DAFB'
+                },
+                {
+                  icon: 'openai',
+                  name: 'OpenAI',
+                  url: 'https://openai.com',
                   color: '#61DAFB'
                 }
               ]}

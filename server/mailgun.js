@@ -1,4 +1,10 @@
+try {
+  require('dotenv').config();
+} catch (err) {
+}
+
 const mailgun = require("mailgun.js");
+const keys = require('./keys');
 
 
 const mg = mailgun.client({
@@ -9,7 +15,7 @@ const mg = mailgun.client({
 const send = (req, res, next) => {
   if (!req.recaptcha.error) {
     mg.messages
-      .create("mail.vamshidhar.com", {
+      .create("brad@sandbox3b21fda428c043e482ddbdfa2c9ab28c.mailgun.org", {
         from: `${req.body.name} <${req.body.email}>`,
         to: "vamshidhar490@outlook.com",
         subject: `🚀 portfolio contact`,

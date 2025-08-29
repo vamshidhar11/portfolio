@@ -9,17 +9,18 @@ class Contact extends React.Component {
     this.state = {
       sent: false,
       loading: false,
-      recaptcha: null
+      recaptcha: null,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCaptcha = this.handleCaptcha.bind(this);
   }
   handleCaptcha(value) {
     this.setState({
-      recaptcha: value
+      recaptcha: value,
     });
   }
   handleSubmit(e) {
+    console.log(e);
     e.preventDefault();
     if (typeof window !== "undefined" && window.ga) {
       window.ga("send", "event", "Contact", "Submit form");
@@ -37,34 +38,37 @@ class Contact extends React.Component {
         Phone: ${e.target.phone.value || "n/a"}
         description:${e.target.description.value || "n/a"}
         `,
-        _subject: "🚀 portfolio contact"
+        _subject: "🚀 portfolio contact",
       };
       axios({
         method: "post",
         url: "/mail",
-        data
+        data,
       })
-        .then(response => {
+        .then((response) => {
           if (response.data.success) {
             this.setState({
-              sent: true
+              sent: true,
             });
             if (typeof window !== "undefined" && window.ga) {
               window.ga("send", "event", "Contact", "Submit form successful");
             }
           }
         })
-        .catch(err => {
+        .catch((err) => {
           console.log(err);
         });
     } else {
       this.setState({
-        error: this.props.messages.form.errors.invalidMail
+        error: this.props.messages.form.errors.invalidMail,
       });
     }
   }
   render() {
     const messages = this.props.messages;
+    const enableRecaptcha = process.env.REACT_APP_ENABLE_RECAPTCHA === 'true';
+    const siteKey = process.env.REACT_APP_RECAPTCHA_SITE_KEY || '';
+    const showRecaptcha = enableRecaptcha && !!siteKey;
     if (messages) {
       return (
         <div>
@@ -173,16 +177,18 @@ class Contact extends React.Component {
               </div>
               <div className="col-12">
                 <div className="form-group">
-                  <ReCAPTCHA
-                    onChange={this.handleCaptcha}
-                    sitekey="6LeDZj4UAAAAAPvilGJTODOn8woGOH1DVpBI3GK2"
-                  />
+                  {showRecaptcha ? (
+                    <ReCAPTCHA
+                      onChange={this.handleCaptcha}
+                      sitekey={siteKey}
+                    />
+                  ) : null}
                 </div>
               </div>
               <div className="col">
                 <button
                   type="submit"
-                  disabled={this.state.loading || !this.state.recaptcha}
+                  disabled={this.state.loading}
                   className="btn btn-primary"
                 >
                   {!this.state.loading

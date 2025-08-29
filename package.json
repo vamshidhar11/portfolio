@@ -34,14 +34,18 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "build": "gatsby build",
+    "env:ensure": "node -e \"const fs=require('fs');['.env.development','.env.production'].forEach(f=>{if(!fs.existsSync(f)){fs.copyFileSync('.env.example',f);console.log('Created',f)}else{console.log(f,'exists')}})\"",
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server",
-    "postinstall": "gatsby build"
+    "postinstall": "gatsby build",
+    "dev": "cross-env NODE_ENV=development ENABLE_RECAPTCHA=false node server",
+    "build": "gatsby build",
+    "start": "cross-env NODE_ENV=production ENABLE_RECAPTCHA=true node server"
   },
   "devDependencies": {
+    "cross-env": "^10.0.0",
+    "dotenv": "^17.2.1",
     "prettier": "^1.6.1"
   }
 }
